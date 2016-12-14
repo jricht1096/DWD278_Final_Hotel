@@ -1,0 +1,98 @@
+@model DWD278_Final_Hotel_Rooms.Models.RoomListViewModel
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+
+<center><strong><h2>Rooms Available</h2></strong></center>
+
+<table class="table">
+    <tr>
+        <th>
+           Room Number
+        </th>
+        <th>
+           State of the Room
+        </th>
+        <th>
+           Reservation Status
+        </th>
+        <th>
+           Size of Room
+        </th>
+        <th>
+          Description
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model.openRooms)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Number.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.State.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReservationStatus.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Size)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            
+        </tr>
+    }
+
+</table>
+
+<p>&nbsp:</p>
+<center><strong><h2>Rooms Reserved</h2></strong></center>
+<table class="table">
+    <tr>
+        <th>
+            Room #
+        </th>
+        <th>
+            State of the Room
+        </th>
+        <th>
+            Reservation Status
+        </th>
+        <th>
+            Size of Room
+        </th>
+        <th>
+            Description
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model.closedRooms)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Number.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.State.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReservationStatus.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Size)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+           
+        </tr>
+    }
+
+</table>
